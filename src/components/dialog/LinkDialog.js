@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 import { Reddit, GitHub, Cafe } from '@components/icons'
 import metadata from "@src/util/metadata.json"
-import { getAnalytics, logEvent } from 'firebase/analytics'
+// import { getAnalytics, logEvent } from 'firebase/analytics'
 
 const links = [{
   icon: <Reddit/>,
@@ -42,7 +42,7 @@ export default function LinkDialog(props) {
     navigator.clipboard.writeText(content)
     const temp = [...copied]
     temp[idx] = true
-    logEvent(getAnalytics(), `share_copy`, { type: sections()[idx].label })
+    // logEvent(getAnalytics(), `share_copy`, { type: sections()[idx].label })
     setCopied(temp)
     setTimeout(() => {
       temp[idx] = false

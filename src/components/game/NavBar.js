@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import { Button } from "@components/common"
 import { ArrowLeft, ArrowRight, DoubleArrowLeft, DoubleArrowRight } from "@components/icons"
 import styles from "@styles/game/main.module.sass"
-import { getAnalytics, logEvent } from "firebase/analytics"
+// import { getAnalytics, logEvent } from "firebase/analytics"
 
 
 export default function NavBar({ onCardChange, onLevelChange, cards, levels }) {
@@ -13,19 +13,19 @@ export default function NavBar({ onCardChange, onLevelChange, cards, levels }) {
 
   const handleBack = () => {
     setCard(--card)
-    logEvent(getAnalytics(), 'card_prev')
+    // logEvent(getAnalytics(), 'card_prev')
   }
   const handleNext = () => {
     setCard(++card)
-    logEvent(getAnalytics(), 'card_next')
+    // logEvent(getAnalytics(), 'card_next')
   }
   const handlePrevLevel = () => {
     setLevel(--level)
-    logEvent(getAnalytics(), 'level_prev')
+    // logEvent(getAnalytics(), 'level_prev')
   }
   const handleNextLevel = () => {
     setLevel(++level)
-    logEvent(getAnalytics(), 'level_next')
+    // logEvent(getAnalytics(), 'level_next')
   }
 
   useEffect(() => {

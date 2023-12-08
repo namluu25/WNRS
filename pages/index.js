@@ -9,7 +9,7 @@ import { ArrowLeft, ArrowRight } from "@src/components/icons"
 import { decodeDecks, encodeDecks } from "@src/util/helperFn"
 
 import styles from "@styles/main/main.module.sass"
-import { getAnalytics, logEvent } from "firebase/analytics"
+// import { getAnalytics, logEvent } from "firebase/analytics"
 import Head from "next/head"
 import { useTheme } from "@src/context/ThemeContext"
 
@@ -90,11 +90,11 @@ export default function Home() {
         document.body.style.background = "var(--theme-main)"
       }
       const _encodedDecks = encodeDecks(input.decks)
-      logEvent(getAnalytics(), 'game_start', { 
-        mode: input.mode, 
-        deck: _encodedDecks, 
-        players: input.names.length 
-      })
+      // logEvent(getAnalytics(), 'game_start', { 
+      //   mode: input.mode, 
+      //   deck: _encodedDecks, 
+      //   players: input.names.length 
+      // })
       setTimeout(() => {
         router.push({
           pathname: '/game',
